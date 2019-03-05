@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ((TextView)findViewById(R.id.welcomemess)).setText("Our goal is to help you de-stress through ___. Before we start, we’ll have you take a quiz so we can __.");
+                ((TextView)findViewById(R.id.welcomemess)).setTextSize(30);
+                ((TextView)findViewById(R.id.welcomemess)).setY(450);
+                ((TextView)findViewById(R.id.welcomemess)).setX(110);
 
                 changewords.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         changewords.setText("Tap Here");
-        changewords.setX(425);
+        changewords.setX(350);
         changewords.setY(1300);
 }
 
