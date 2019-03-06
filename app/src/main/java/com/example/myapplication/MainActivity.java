@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -35,16 +36,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ((TextView)findViewById(R.id.welcomemess)).setText("Our goal is to help you de-stress through ___. Before we start, we’ll have you take a quiz so we can __.");
                 ((TextView)findViewById(R.id.welcomemess)).setTextSize(30);
-                ((TextView)findViewById(R.id.welcomemess)).setY(450);
-                ((TextView)findViewById(R.id.welcomemess)).setX(110);
-
                 changewords.setOnClickListener(new View.OnClickListener() {
+                    @Override
                     public void onClick(View view) {
-                        ((TextView)findViewById(R.id.welcomemess)).setText("quiz here");
+                        ((TextView)findViewById(R.id.welcomemess)).setText("Thank you! Let's head to the home screen.");
+                        startActivity(new Intent(MainActivity.this,Main2Activity.class));
                     }
                 });
 
-            }
+                }
         });
         changewords.setText("Tap Here");
         changewords.setX(350);
