@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //((TextView)findViewById(R.id.welcome)).hide();
+
+
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,20 +30,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
         final Button changewords = findViewById(R.id.changewords);
         changewords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((TextView)findViewById(R.id.welcomemess)).setText("Our goal is to help you de-stress through ___. Before we start, we’ll have you take a quiz so we can __.");
-                ((TextView)findViewById(R.id.welcomemess)).setTextSize(30);
-                ((TextView)findViewById(R.id.welcomemess)).setY(450);
-                ((TextView)findViewById(R.id.welcomemess)).setX(110);
+                ((TextView)findViewById(R.id.welcome)).setText("Our goal is to help you de-stress. Before we start, we’ll have you take a quiz so we can make recommendations.");
 
                 changewords.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        ((TextView)findViewById(R.id.welcomemess)).setText("quiz here");
-                        ((TextView)findViewById(R.id.welcomemess)).setText("");
+                        ((TextView)findViewById(R.id.welcome)).setText("");
                         startActivity(new Intent(MainActivity.this,Main2Activity.class));
                     }
                 });
@@ -47,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        changewords.setText("Tap Here");
-        changewords.setX(350);
-        changewords.setY(1300);
 }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void changetext(View view)
     {
-        ((TextView)findViewById(R.id.welcomemess)).setText("You dont suck that much");
+        ((TextView)findViewById(R.id.welcome)).setText("You dont suck that much");
     }
 
     public static void starttutorial()
     {
-        //((TextView)findViewById(R.id.welcomemess)).setText("Thank you! Let's head to the home screen.");
+        //((TextView)findViewById(R.id.welcome)).setText("Thank you! Let's head to the home screen.");
     }
 }

@@ -30,4 +30,25 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <TextView
+        android:id="@+id/quizquestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hit the Submit Answer button!"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="100dp"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:id="@+id/qbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="550dp"
+        android:text="Submit Answer"
+        android:textSize="25dp"
+        />
+
 </android.support.design.widget.CoordinatorLayout>
