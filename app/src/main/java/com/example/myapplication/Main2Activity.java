@@ -5,12 +5,15 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
     public static String[] quiz = {"Ready to start the quiz?", "Which of the following have you done to relieve stress?","How effective would you say these are?","What is/are the cause(s) of your stress?","What is your diet like?","What is your exercise routine?","How often do you get mad?"};
-    public static String[][] answers = {{"yes","no"},{"mc","watch videos","play games","talk with someone","eat","listen to music","sleep","physical activity","other"},{"rating"},{"School/Work", "Major life change(s)/Traumatic Events","Relationship difficulties", "Emotional problems"},{"Healthy","Average","Unhealthy"},{"over 60 minutes","60 minutes","30 minutes","less than 30 minutes"}};
+    public static String[][] answers = {{"yes","no"},{"multi","watch videos","play games","talk with someone","eat","listen to music","sleep","physical activity","other"},{"slide","rating"},{"multi","School/Work", "Major life change(s)/Traumatic Events","Relationship difficulties", "Emotional problems"},{"Healthy","Average","Unhealthy"},{"over 60 minutes","60 minutes","30 minutes","less than 30 minutes"}};
     public static int questnum;
     public boolean quiztest = true;
 
@@ -45,8 +48,9 @@ public class Main2Activity extends AppCompatActivity {
                 //****bug i need help fixing - ready to start the quiz shows up in a location idk where its set MAKE LAYOUT FIT TO PHONE
                 questnum++;
                 //check how to look at the app again
-                //res layout activitymain2.xml
+                //app src main res layout activitymain2.xml
                 //dont touch contentmainxml thats the layout and things added here cannot be moved in scenebuilder or worked with well
+                listanswers();
             }
         });
 
@@ -54,7 +58,22 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-
+    public void listanswers()
+    {
+        ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);  // This is the id of the RadioGroup we defined
+        RadioButton button = new RadioButton(this);
+        button.setId(0);
+        button.setText("yes");
+        answerchoices.addView(button);
+        //for (int i = 0; i < 1; i++) {
+         //   RadioButton button1 = new RadioButton(this);
+         //   button1.setId(i); //id has to be a number, text has to be a string, work with values
+         //   button1.setText(i);
+         //   answerchoices.addView(button1);
+        //}
+        //creates new button without above thing, something is off
+        //answers[questnum][answers[questnum].length-1].length()
+    }
 
     public void checkisdone()
     {
@@ -70,6 +89,7 @@ public class Main2Activity extends AppCompatActivity {
     //{ questnum++;((TextView)findViewById(R.id.welcome)).setText(quiz[questnum]);for(int i = 0; i < answers.length;i++) { for (int k = 0; k < answers[i][k].length();k++) { System.out.println(answers[i][k]); } }
         //increment the value, questions are in an array.
         //MULTIWINDOWMODE OR CONSTRAINT LAYOUT KEEP LAYOUT CONSTANT ON DIFFERENT PHONES
+    //THOUSANDSANDTHOUSANDSOFEYESJUSTLIKEMINEDADAADA
     //}
 
 
