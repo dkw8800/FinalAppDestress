@@ -63,6 +63,7 @@ public class Main2Activity extends AppCompatActivity {
             MainActivity.starttutorial();
             finish();
             //does this close this activity or whole app?
+            //activity -cindy
         }
     }
 
