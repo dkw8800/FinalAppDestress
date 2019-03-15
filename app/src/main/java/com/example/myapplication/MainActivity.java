@@ -1,5 +1,5 @@
 package com.example.myapplication;
-//test2 to see if this problem's been fixed app has been committed to only by dwong0023 but stranger's account is always showing up on git
+//app has been committed to only by dwong0023 but stranger's account is always showing up on git for all commits
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
