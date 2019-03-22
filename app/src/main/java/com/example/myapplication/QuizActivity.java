@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-//changed - C says use checkboxes not radiobuttons
-public class Main2Activity extends AppCompatActivity {
-    public static String[] quiz = {"Which of the following have you done to relieve stress?","How effective would you say these are?","What is/are the cause(s) of your stress?","What is your diet like?","What is your exercise routine?","How often do you get mad?"};
-    public static String[][] answers = {{"yes","no"},{"multi","watch videos","play games","talk with someone","eat","listen to music","sleep","physical activity","other"},{"slide","rating"},{"multi",".","School/Work", "Major life change(s)/Traumatic Events","Relationship difficulties", "Emotional problems","Other"},{"single","Healthy","Average","Unhealthy"},{"single","over 60 minutes","60 minutes","30 minutes","less than 30 minutes"}};
+//next friday
+public class QuizActivity extends AppCompatActivity {
+    public static String[] quiz = {"Which of the following have you done to relieve stress?", "How effective would you say these are?", "What is/are the cause(s) of your stress?", "What is your diet like?", "What is your exercise routine?", "How often do you get mad?"};
+    public static String[][] answers = {{"yes", "no"}, {"multi", "watch videos", "play games", "talk with someone", "eat", "listen to music", "sleep", "physical activity", "other"}, {"slide", "rating"}, {"multi", ".", "School/Work", "Major life change(s)", "Traumatic Events", "Relationship difficulties", "Emotional problems", "Other"}, {"single", "Healthy", "Average", "Unhealthy"}, {"single", "over 60 minutes", "60 minutes", "30 minutes", "less than 30 minutes"}};
     public static int questnum;
     public boolean quiztest = true;
 
@@ -35,10 +35,9 @@ public class Main2Activity extends AppCompatActivity {
         });
 
 
-
         Button qbutton = findViewById(R.id.qbutton);
-       //final Button setupquestion = findViewById(R.id.setupquestion);
-       qbutton.setOnClickListener(new View.OnClickListener() {
+        //final Button setupquestion = findViewById(R.id.setupquestion);
+        qbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //read answers from old answerbox, all possible answers return > 0 but first starter is 0 automatically
@@ -51,21 +50,20 @@ public class Main2Activity extends AppCompatActivity {
                 //check how to look at the app again
                 //app src main res layout activitymain2.xml
                 //dont touch contentmainxml thats the layout and things added here cannot be moved in scenebuilder or worked with well
-                listanswersasradiobuttons();
+                listanswersascheckboxes();
             }
         });
 
 
-
     }
 
-    public void listanswersasradiobuttons()
-    {
+    public void listanswersascheckboxes() {
         ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);
         answerchoices.removeAllViews();
         // This is the id of the RadioGroup we defined
-        if(answers[questnum][0].equals("multi")) { }
-        for(int i = 1; i < answers[questnum].length;i++) {
+        if (answers[questnum][0].equals("multi")) {
+        }
+        for (int i = 1; i < answers[questnum].length; i++) {
             final RadioButton button = new RadioButton(this);
             button.setId(0);
             button.setText(answers[questnum][i]);
@@ -75,11 +73,38 @@ public class Main2Activity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(val[0] ==1)
-                    {button.setChecked(!button.isChecked());
+                    if (val[0] == 1) {
+                        button.setChecked(!button.isChecked());
                         val[0] = 0;
+                    } else {
+                        val[0] = 1;
                     }
-                    else {
+                }
+            });
+            answerchoices.addView(button);
+        }
+    }
+
+    public void listanswersasradiobuttons() {
+        ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);
+        answerchoices.removeAllViews();
+        // This is the id of the RadioGroup we defined
+        if (answers[questnum][0].equals("multi")) {
+        }
+        for (int i = 1; i < answers[questnum].length; i++) {
+            final RadioButton button = new RadioButton(this);
+            button.setId(0);
+            button.setText(answers[questnum][i]);
+            int k = 0;
+            button.setTag(k);
+            final int[] val = {(int) button.getTag()};
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (val[0] == 1) {
+                        button.setChecked(!button.isChecked());
+                        val[0] = 0;
+                    } else {
                         val[0] = 1;
                     }
                 }
@@ -87,10 +112,10 @@ public class Main2Activity extends AppCompatActivity {
             answerchoices.addView(button);
         }
         //for (int i = 0; i < 1; i++) {
-         //   RadioButton button1 = new RadioButton(this);
-         //   button1.setId(i); //id has to be a number, text has to be a string, work with values
-         //   button1.setText(i);
-         //   answerchoices.addView(button1);
+        //   RadioButton button1 = new RadioButton(this);
+        //   button1.setId(i); //id has to be a number, text has to be a string, work with values
+        //   button1.setText(i);
+        //   answerchoices.addView(button1);
         //}
         //creates new button without above thing, something is off
         //answers[questnum][answers[questnum].length-1].length()
@@ -98,19 +123,17 @@ public class Main2Activity extends AppCompatActivity {
 
     //public void recordanswers()
     //{
-     //   for(r: RadioButton.thepresentradiobuttons)
+    //   for(r: RadioButton.thepresentradiobuttons)
     //    {
-     //       if(radiobutton.isChecked())
-      //      {
-      //          selectedanswers[i].add(radiobutton.getText());
-      //      }
-      //  }
-   // }
+    //       if(radiobutton.isChecked())
+    //      {
+    //          selectedanswers[i].add(radiobutton.getText());
+    //      }
+    //  }
+    // }
 
-    public void checkisdone()
-    {
-        if(quiztest == false)
-        {
+    public void checkisdone() {
+        if (quiztest == false) {
             MainActivity.starttutorial();
             finish();
             //does this close this activity or whole app?
@@ -120,11 +143,11 @@ public class Main2Activity extends AppCompatActivity {
 
     //public void addanswers() has been moved to quiz
     //{ questnum++;((TextView)findViewById(R.id.welcome)).setText(quiz[questnum]);for(int i = 0; i < answers.length;i++) { for (int k = 0; k < answers[i][k].length();k++) { System.out.println(answers[i][k]); } }
-        //increment the value, questions are in an array.
-        //MULTIWINDOWMODE OR CONSTRAINT LAYOUT KEEP LAYOUT CONSTANT ON DIFFERENT PHONES
+    //increment the value, questions are in an array.
+    //MULTIWINDOWMODE OR CONSTRAINT LAYOUT KEEP LAYOUT CONSTANT ON DIFFERENT PHONES
     //THOUSANDSANDTHOUSANDSOFEYESJUSTLIKEMINEDADAADA
     //}
 
 
-
 }
+
