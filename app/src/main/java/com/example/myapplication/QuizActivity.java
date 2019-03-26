@@ -7,15 +7,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 //next friday
 public class QuizActivity extends AppCompatActivity {
     public static String[] quiz = {"Which of the following have you done to relieve stress?", "How effective would you say these are?", "What is/are the cause(s) of your stress?", "What is your diet like?", "What is your exercise routine?", "How often do you get mad?"};
-    public static String[][] answers = {{"yes", "no"}, {"multi", "watch videos", "play games", "talk with someone", "eat", "listen to music", "sleep", "physical activity", "other"}, {"slide", "rating"}, {"multi", ".", "School/Work", "Major life change(s)", "Traumatic Events", "Relationship difficulties", "Emotional problems", "Other"}, {"single", "Healthy", "Average", "Unhealthy"}, {"single", "over 60 minutes", "60 minutes", "30 minutes", "less than 30 minutes"}};
+    public static String[][] answers = {{"yes", "no"}, {"multi", "watch videos", "play games", "talk with someone", "eat", "listen to music", "sleep", "physical activity", "other"}, {"single", "1","2","3","4","5"}, {"multi", "School/Work", "Major life change(s)", "Traumatic Events", "Relationship difficulties", "Emotional problems", "Other"}, {"single", "Healthy", "Average", "Unhealthy"}, {"single", "over 60 minutes", "60 minutes", "30 minutes", "less than 30 minutes"}};
     public static int questnum;
     public boolean quiztest = true;
+    public String selectedanswers[][];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-
+        final ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);
         Button qbutton = findViewById(R.id.qbutton);
         //final Button setupquestion = findViewById(R.id.setupquestion);
         qbutton.setOnClickListener(new View.OnClickListener() {
@@ -50,16 +52,28 @@ public class QuizActivity extends AppCompatActivity {
                 //check how to look at the app again
                 //app src main res layout activitymain2.xml
                 //dont touch contentmainxml thats the layout and things added here cannot be moved in scenebuilder or worked with well
-                listanswersascheckboxes();
+
+                answerchoices.removeAllViews();
+                if(questnum != 0 && answers[questnum][0].equals("multi")) {
+                    listanswersascheckboxes(answerchoices);
+                }
+                else if (questnum != 0 && answers[questnum][0].equals("single"))
+                {
+                    listanswersasradiobuttons(answerchoices);
+                }
+                else
+                {
+                    //ratingquestion(answerchoices);
+                    return;
+                }
+                //for questnum 2 repeat value rating options for every answer they give from questnum 1 maybe dropdown checkbox instead
             }
         });
 
 
     }
 
-    public void listanswersascheckboxes() {
-        ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);
-        answerchoices.removeAllViews();
+    public void listanswersasradiobuttons(ViewGroup answerchoices) {
         // This is the id of the RadioGroup we defined
         if (answers[questnum][0].equals("multi")) {
         }
@@ -68,47 +82,23 @@ public class QuizActivity extends AppCompatActivity {
             button.setId(0);
             button.setText(answers[questnum][i]);
             int k = 0;
-            button.setTag(k);
+            button.setTag(k + questnum);
             final int[] val = {(int) button.getTag()};
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (val[0] == 1) {
-                        button.setChecked(!button.isChecked());
-                        val[0] = 0;
-                    } else {
-                        val[0] = 1;
-                    }
-                }
-            });
+            answerchoices = (ViewGroup) findViewById(R.id.answerlist);
             answerchoices.addView(button);
         }
     }
 
-    public void listanswersasradiobuttons() {
-        ViewGroup answerchoices = (ViewGroup) findViewById(R.id.answerlist);
-        answerchoices.removeAllViews();
+    public void listanswersascheckboxes(ViewGroup answerchoices) {
         // This is the id of the RadioGroup we defined
         if (answers[questnum][0].equals("multi")) {
         }
         for (int i = 1; i < answers[questnum].length; i++) {
-            final RadioButton button = new RadioButton(this);
+            CheckBox button = new CheckBox(this);
             button.setId(0);
             button.setText(answers[questnum][i]);
             int k = 0;
-            button.setTag(k);
-            final int[] val = {(int) button.getTag()};
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (val[0] == 1) {
-                        button.setChecked(!button.isChecked());
-                        val[0] = 0;
-                    } else {
-                        val[0] = 1;
-                    }
-                }
-            });
+            button.setTag(k + questnum);
             answerchoices.addView(button);
         }
         //for (int i = 0; i < 1; i++) {
@@ -121,8 +111,10 @@ public class QuizActivity extends AppCompatActivity {
         //answers[questnum][answers[questnum].length-1].length()
     }
 
-    //public void recordanswers()
-    //{
+    //public void ratingquestion(ViewGroup answerchoices){ If we want to change that one question to set to be a sliding question or something}
+
+    public void recordanswers()
+    {
     //   for(r: RadioButton.thepresentradiobuttons)
     //    {
     //       if(radiobutton.isChecked())
@@ -130,7 +122,7 @@ public class QuizActivity extends AppCompatActivity {
     //          selectedanswers[i].add(radiobutton.getText());
     //      }
     //  }
-    // }
+    }
 
     public void checkisdone() {
         if (quiztest == false) {
