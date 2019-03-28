@@ -113,15 +113,15 @@ public class QuizActivity extends AppCompatActivity {
 
     //public void ratingquestion(ViewGroup answerchoices){ If we want to change that one question to set to be a sliding question or something}
 
-    public void recordanswers()
+    public void recordanswers(ViewGroup answerchoices)
     {
-    //   for(r: RadioButton.thepresentradiobuttons)
-    //    {
-    //       if(radiobutton.isChecked())
-    //      {
-    //          selectedanswers[i].add(radiobutton.getText());
-    //      }
-    //  }
+        //for( View v: answerchoices)
+       // {
+         //  if(v.isChecked())
+         // {
+         //     selectedanswers[questnum][i].add(v.getText());
+          //}
+       // }
     }
 
     public void checkisdone() {
