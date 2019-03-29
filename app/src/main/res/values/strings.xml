@@ -4,4 +4,5 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="textview">TextView</string>
     <string name="title_activity_quiz">QuizActivity</string>
+    <string name="title_activity_main4">Main4Activity</string>
 </resources>
