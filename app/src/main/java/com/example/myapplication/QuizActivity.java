@@ -79,13 +79,14 @@ public class QuizActivity extends AppCompatActivity {
         }
         for (int i = 1; i < answers[questnum].length; i++) {
             final RadioButton button = new RadioButton(this);
-            button.setId(0);
+            button.setId(i);
             button.setText(answers[questnum][i]);
             int k = 0;
             button.setTag(k + questnum);
             final int[] val = {(int) button.getTag()};
             answerchoices = (ViewGroup) findViewById(R.id.answerlist);
             answerchoices.addView(button);
+            //fixed problem with button selection by changing id num
         }
     }
 
@@ -109,6 +110,23 @@ public class QuizActivity extends AppCompatActivity {
         //}
         //creates new button without above thing, something is off
         //answers[questnum][answers[questnum].length-1].length()
+    }
+
+    public void listanswersasdropdowns(ViewGroup answerchoices) {
+        // need to change this into spinner for dropdown
+        if (answers[questnum][0].equals("multi")) {
+        }
+        for (int i = 1; i < answers[questnum].length; i++) {
+            final RadioButton button = new RadioButton(this);
+            button.setId(i);
+            button.setText(answers[questnum][i]);
+            int k = 0;
+            button.setTag(k + questnum);
+            final int[] val = {(int) button.getTag()};
+            answerchoices = (ViewGroup) findViewById(R.id.answerlist);
+            answerchoices.addView(button);
+            //create a spinner per response
+        }
     }
 
     //public void ratingquestion(ViewGroup answerchoices){ If we want to change that one question to set to be a sliding question or something}

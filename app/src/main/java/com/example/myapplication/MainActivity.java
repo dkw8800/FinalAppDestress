@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         ((TextView)findViewById(R.id.welcome)).setText("");
                         //startActivity(new Intent(MainActivity.this,Main2Activity.class));
-                        startActivity(new Intent(MainActivity.this,Main4Activity.class));
+                        startActivity(new Intent(MainActivity.this,QuizActivity.class));
                     }
                 });
 
