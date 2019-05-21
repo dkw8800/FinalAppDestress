@@ -92,15 +92,13 @@ public class QuizActivity extends AppCompatActivity {
 
     public void listanswersascheckboxes(ViewGroup answerchoices) {
         // This is the id of the RadioGroup we defined
-        if (answers[questnum][0].equals("multi")) {
-        }
         for (int i = 1; i < answers[questnum].length; i++) {
-            CheckBox button = new CheckBox(this);
-            button.setId(0);
-            button.setText(answers[questnum][i]);
-            int k = 0;
-            button.setTag(k + questnum);
-            answerchoices.addView(button);
+                CheckBox button = new CheckBox(this);
+                button.setId(i);
+                button.setText(answers[questnum][i]);
+                int k = 0;
+                button.setTag(k + questnum);
+                answerchoices.addView(button);
         }
         //for (int i = 0; i < 1; i++) {
         //   RadioButton button1 = new RadioButton(this);
