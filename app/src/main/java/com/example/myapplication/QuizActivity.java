@@ -134,7 +134,7 @@ public class QuizActivity extends AppCompatActivity {
         for (int i = 0; i < answers.length; i++) {
             final View child = answerchoices.getChildAt(i);
             if (child.isPressed()) {
-                selectedanswers[questnum][i].add(child.getText());
+                //selectedanswers[questnum][i].add(child.getText());
             }
         }
     }
