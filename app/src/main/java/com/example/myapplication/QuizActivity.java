@@ -17,7 +17,7 @@ public class QuizActivity extends AppCompatActivity {
     public static String[][] answers = {{"yes", "no"}, {"multi", "watch videos", "play games", "talk with someone", "eat", "listen to music", "sleep", "physical activity", "other"}, {"single", "1","2","3","4","5"}, {"multi", "School/Work", "Major life change(s)", "Traumatic Events", "Relationship difficulties", "Emotional problems", "Other"}, {"single", "Healthy", "Average", "Unhealthy"}, {"single", "over 60 minutes", "60 minutes", "30 minutes", "less than 30 minutes"}};
     public static int questnum;
     public boolean quiztest = true;
-    public String selectedanswers[][];
+    public String selectedanswers[][] = new String[quiz.length][10];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,13 +131,13 @@ public class QuizActivity extends AppCompatActivity {
 
     public void recordanswers(ViewGroup answerchoices)
     {
-        //for( View v: answerchoices)
-       // {
-         //  if(v.isChecked())
-         // {
-         //     selectedanswers[questnum][i].add(v.getText());
-          //}
-       // }
+        //for( Button v: answerchoices)
+       {
+         //if(v.isChecked())
+          {
+           //   selectedanswers[questnum][i].add(v.getText());
+          }
+        }
     }
 
     public void checkisdone() {
