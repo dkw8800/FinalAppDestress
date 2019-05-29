@@ -131,12 +131,11 @@ public class QuizActivity extends AppCompatActivity {
 
     public void recordanswers(ViewGroup answerchoices)
     {
-        //for( Button v: answerchoices)
-       {
-         //if(v.isChecked())
-          {
-           //   selectedanswers[questnum][i].add(v.getText());
-          }
+        for (int i = 0; i < answers.length; i++) {
+            final View child = answerchoices.getChildAt(i);
+            if (child.isPressed()) {
+                selectedanswers[questnum][i].add(child.getText());
+            }
         }
     }
 
