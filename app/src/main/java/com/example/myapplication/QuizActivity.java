@@ -129,12 +129,12 @@ public class QuizActivity extends AppCompatActivity {
 
     //public void ratingquestion(ViewGroup answerchoices){ If we want to change that one question to set to be a sliding question or something}
 
-    public void recordanswers(ViewGroup answerchoices)
+    public void recordanswers(ViewGroup answerchoices, int quest)
     {
         for (int i = 0; i < answers.length; i++) {
             final View child = answerchoices.getChildAt(i);
             if (child.isPressed()) {
-                //selectedanswers[questnum][i].add(child.getText());
+                selectedanswers[questnum][i] = answers[quest][child.getId()];
             }
         }
     }
