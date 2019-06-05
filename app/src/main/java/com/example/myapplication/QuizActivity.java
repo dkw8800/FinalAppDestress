@@ -17,8 +17,8 @@ public class QuizActivity extends AppCompatActivity {
     public static String[][] answers = {{"yes", "no"}, {"multi", "watch videos", "play games", "talk with someone", "eat", "listen to music", "sleep", "physical activity", "other"}, {"single", "1","2","3","4","5"}, {"multi", "School/Work", "Major life change(s)", "Traumatic Events", "Relationship difficulties", "Emotional problems", "Other"}, {"single", "Healthy", "Average", "Unhealthy"}, {"single", "over 60 minutes", "60 minutes", "30 minutes", "less than 30 minutes"}};
     public static int questnum;
     public boolean quiztest = true;
-    public String selectedanswers[][] = new String[quiz.length][10];
-    public String homestring = "Please select an answer choice";
+    public static String[] selectedanswers[] = new String[quiz.length][10];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +46,8 @@ public class QuizActivity extends AppCompatActivity {
                 //Textview Answerbox = new TextView, is there a wawy to have checkboxes
                 //setanswers with questnum, move to below question
 
-                //if(questnum>=1)
-                //{recordanswers(answerchoices,questnum);}
+                if(questnum>=1)
+                {recordanswers(answerchoices,questnum);}
 
                 ((TextView) findViewById(R.id.quizquestions)).setText(quiz[questnum]);
                 //****bug i need help fixing - ready to start the quiz shows up in a location idk where its set MAKE LAYOUT FIT TO PHONE
@@ -136,9 +136,9 @@ public class QuizActivity extends AppCompatActivity {
     {
             for (int i = 0; i < answers.length; i++) {
                 final View child = answerchoices.getChildAt(i);
-                if (child.isPressed()) {
+                if(child.isPressed()) {
                     selectedanswers[questnum][i] = answers[quest][child.getId()];
-                    //answers[3][1] = selectedanswers[questnum][1];
+                    //quiz[5] = selectedanswers[questnum][1];
                 }
             }
     }
