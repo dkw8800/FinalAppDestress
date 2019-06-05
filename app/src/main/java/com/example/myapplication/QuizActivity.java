@@ -18,7 +18,7 @@ public class QuizActivity extends AppCompatActivity {
     public static int questnum;
     public boolean quiztest = true;
     public String selectedanswers[][] = new String[quiz.length][10];
-
+    public String homestring = "Please select an answer choice";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,10 @@ public class QuizActivity extends AppCompatActivity {
                 //read answers from old answerbox, all possible answers return > 0 but first starter is 0 automatically
                 //Textview Answerbox = new TextView, is there a wawy to have checkboxes
                 //setanswers with questnum, move to below question
-                //recordanswers();
+
+                //if(questnum>=1)
+                //{recordanswers(answerchoices,questnum);}
+
                 ((TextView) findViewById(R.id.quizquestions)).setText(quiz[questnum]);
                 //****bug i need help fixing - ready to start the quiz shows up in a location idk where its set MAKE LAYOUT FIT TO PHONE
                 questnum++;
@@ -131,13 +134,15 @@ public class QuizActivity extends AppCompatActivity {
 
     public void recordanswers(ViewGroup answerchoices, int quest)
     {
-        for (int i = 0; i < answers.length; i++) {
-            final View child = answerchoices.getChildAt(i);
-            if (child.isPressed()) {
-                selectedanswers[questnum][i] = answers[quest][child.getId()];
+            for (int i = 0; i < answers.length; i++) {
+                final View child = answerchoices.getChildAt(i);
+                if (child.isPressed()) {
+                    selectedanswers[questnum][i] = answers[quest][child.getId()];
+                    //answers[3][1] = selectedanswers[questnum][1];
+                }
             }
-        }
     }
+
 
     public void checkisdone() {
         if (quiztest == false) {
