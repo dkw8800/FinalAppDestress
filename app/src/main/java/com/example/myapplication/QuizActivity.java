@@ -45,9 +45,8 @@ public class QuizActivity extends AppCompatActivity {
                 //read answers from old answerbox, all possible answers return > 0 but first starter is 0 automatically
                 //Textview Answerbox = new TextView, is there a wawy to have checkboxes
                 //setanswers with questnum, move to below question
-
-                if(questnum>=1)
-                {recordanswers(answerchoices,questnum);}
+                //if(questnum>=1)
+                //{recordanswers(answerchoices,questnum);}
 
                 ((TextView) findViewById(R.id.quizquestions)).setText(quiz[questnum]);
                 //****bug i need help fixing - ready to start the quiz shows up in a location idk where its set MAKE LAYOUT FIT TO PHONE

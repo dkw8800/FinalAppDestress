@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Main4Activity"
-            android:label="@string/title_activity_main4"
+            android:name=".Calendar"
+            android:label="@string/title_activity_calendar"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".GuidedActivities"
+            android:label="@string/title_activity_main4"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"

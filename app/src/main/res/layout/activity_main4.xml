@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main4Activity">
+    tools:context=".GuidedActivities">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,5 +29,71 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ScrollView
+        android:id="@+id/activityselection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/acts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="75dp"
+                android:textSize="25dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:textSize="20dp"
+                android:text="TextView" />
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/yoga1"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="25dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[8]"
+                style="@style/na3" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                style="@style/nap"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="25dp"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="25dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[9]" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="25dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[11]" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
