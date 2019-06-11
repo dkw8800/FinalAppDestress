@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ChatbotTalker"
+            android:label="@string/title_activity_chatbot_talker"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Calendar"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GuidedActivities"
             android:label="@string/title_activity_main4"

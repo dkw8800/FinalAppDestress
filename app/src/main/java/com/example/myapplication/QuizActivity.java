@@ -1,7 +1,7 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 //next friday
 public class QuizActivity extends AppCompatActivity {
@@ -30,9 +29,8 @@ public class QuizActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Please select an answer choice", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                    public void onClick(View view) {
+                        startActivity(new Intent(QuizActivity.this,Calendar.class));
             }
         });
 
@@ -63,9 +61,20 @@ public class QuizActivity extends AppCompatActivity {
                 {
                     listanswersasradiobuttons(answerchoices);
                 }
+                //else if (questnum == quiz.length)
+              //  {
+                    //ratingquestion(answerchoices);
+                   // changewords.setOnClickListener(new View.OnClickListener() {
+                       // @Override
+                       // public void onClick(View view) {
+                           // ((TextView)findViewById(R.id.welcome)).setText("");
+                            //startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                       //     startActivity(new Intent(QuizActivity.this,Calendar.class));
+                       // }
+                    //});
+                //}
                 else
                 {
-                    //ratingquestion(answerchoices);
                     return;
                 }
                 //for questnum 2 repeat value rating options for every answer they give from questnum 1 maybe dropdown checkbox instead

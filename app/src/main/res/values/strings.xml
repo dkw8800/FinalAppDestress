@@ -6,4 +6,5 @@
     <string name="title_activity_quiz">QuizActivity</string>
     <string name="title_activity_main4">Main4Activity</string>
     <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_chatbot_talker">ChatbotTalker</string>
 </resources>

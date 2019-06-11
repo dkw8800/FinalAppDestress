@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 //changed - C says use checkboxes not radiobuttons
 public class Main2Activity extends AppCompatActivity {
