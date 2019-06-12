@@ -21,7 +21,7 @@ public class Calendar extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Calendar.this,GuidedActivities.class));
+                startActivity(new Intent(Calendar.this,ChatbotTalker.class));
             }
         });
 
