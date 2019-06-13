@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="75dp"
                 android:textSize="25dp"
-                android:text="TextView" />
+                android:text="Guided Activities" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:textSize="20dp"
-                android:text="TextView" />
+                android:text="Here is a collection of videos and exercises \n that are recommended for you. Search for \n specific moods or problems you have." />
 
             <SearchView
                 android:layout_width="match_parent"

@@ -28,7 +28,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Happy: Hello! My name is Happy! \n How can I help today?" />
         </TableRow>
 
         <TableRow
@@ -45,7 +45,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="User:I'm feeling a bit upset. \n I know taking walks always helps. \n Are there any open walks going on near me?" />
         </TableRow>
 
         <TableRow
@@ -62,7 +62,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Happy:Let me check! I have noted that walking \n helps, and that you enjoy open walks. \n I am looking for open walks nearby now." />
 
         </TableRow>
 
@@ -78,7 +78,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Type to chat!" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -88,6 +88,6 @@
         android:layout_height="230dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="389dp"
-         />
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

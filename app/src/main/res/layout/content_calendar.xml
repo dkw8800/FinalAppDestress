@@ -35,14 +35,14 @@
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="December 31 2019 \n This is what you have to do today"
                     tools:text="December 31 1969 \n this is what you have to do today" />
 
                 <CheckBox
                     android:id="@+id/checkBox3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CheckBox"
+                    android:text="buy groceries"
                     tools:text="buy groceries" />
 
                 <CheckBox
@@ -56,7 +56,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="upcoming events"
                     tools:text="upcoming events" />
 
                 <android.support.v7.widget.RecyclerView
@@ -69,7 +69,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="Reminder: daily exercise"
                     tools:text="Reminder:daily exercise" />
             </LinearLayout>
         </ScrollView>
