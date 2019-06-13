@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         ((TextView)findViewById(R.id.welcome)).setText("");
                         //startActivity(new Intent(MainActivity.this,Main2Activity.class));
                         startActivity(new Intent(MainActivity.this,QuizActivity.class));
+                        ((TextView)findViewById(R.id.welcome)).setText("Thank you for previewing our app!");
                     }
                 });
 

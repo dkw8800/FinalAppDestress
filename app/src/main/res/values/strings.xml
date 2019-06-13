@@ -9,4 +9,5 @@
     <string name="title_activity_chatbot_talker">ChatbotTalker</string>
     <string name="title_activity_to_do_list">ToDoList</string>
     <string name="title_activity_choice_weight">ChoiceWeight</string>
+    <string name="title_activity_contacts">Contacts</string>
 </resources>
